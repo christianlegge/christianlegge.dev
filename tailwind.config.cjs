@@ -25,6 +25,9 @@ module.exports = {
 				".blog-post hr": {
 					"@apply mt-4 border-gray-400": true,
 				},
+				".blog-post .twitter-tweet": {
+					"@apply mx-auto": true
+				}
 			});
 		},
 	],
