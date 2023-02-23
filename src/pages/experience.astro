@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { getCollection } from "astro:content";
+
+const experience = await getCollection("experience");
+const renderedExperience = await Promise.all(
+	experience.map(async (job) => ({
+		...job,
+		...(await job.render()),
+	}))
+);
+renderedExperience.sort((a, b) => b.data.sortOrder - a.data.sortOrder);
+---
+
+<Layout title="Christian Legge | Experience">
+	<h1 class="heading">My experience</h1>
+	<p>
+		These are all the places I've worked as a software engineer. I've
+		included my responsibilities and the technologies I broadly used there.
+	</p><p>
+		Also included is the reason I left each position&mdash;I know sometimes
+		employers can be apprehensive about employees looking to quit early, and
+		I've had a relatively short stay at most of these jobs. I'm not
+		interested in jumping around jobs often in order to maximize pay or
+		whatever people say to do in this industry, and I want to be sure not to
+		give that impression with my resume.
+	</p>
+	<p>
+		You'll notice that most, if not all, of my professional experience has
+		been with low-level backend tech, and if you're reading this you may
+		know I'm looking for a web-focused role, preferably in full stack web
+		development. I believe that the professional experience below has
+		instilled good software engineering principles in me that can transfer
+		to any type of role.
+	</p>
+	<ul class="cards mt-4 space-y-4">
+		{
+			renderedExperience.map((job) => (
+				<li class="card">
+					<Card {...job.data} extra={job.data.dates}>
+						<job.Content />
+					</Card>
+				</li>
+			))
+		}
+	</ul>
+</Layout>
+<style>
+	p {
+		@apply mt-2 text-lg;
+	}
+</style>

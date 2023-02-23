@@ -1,81 +1,197 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const teams = [
+	"Canadian Soccer Association",
+	"Seattle Mariners",
+	"New York Mets",
+	"Toronto Raptors",
+	"Minnesota Timberwolves",
+	"Toronto Maple Leafs",
+	"Vancouver Canucks",
+	"Toronto Argonauts",
+	"Leicester City F.C.",
+	"Buffalo Bills",
+	"San Francisco 49ers",
+	"Jacksonville Jaguars",
+	"Toronto Blue Jays",
+];
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
+<Layout title="Christian Legge" mainClass="max-w-[140ch]">
+	<h1 class="text-center text-8xl font-light">Hi!</h1>
+	<h2 class="text-center text-3xl font-light">
+		I'm Christian, and I'm a software engineer.
+	</h2>
+	<p>
+		If you're on this page, you might be considering hiring me, or maybe you
+		just want to know a little more about me. Hopefully this website can
+		help you!
+	</p>
+	<p>
+		For the basics&mdash;I'm a guy, I'm 26 years old, I live in Mississauga,
+		Ontario, Canada. I prefer remote work.
+	</p>
+	<section>
+		<h3>
+			What you should know about me as an <span class="cutout"
+				>engineer</span
+			>
+		</h3>
+		<ul>
+			<li>
+				I <strong>respond well to feedback</strong>. I'd like to think
+				so, anyway. No one is perfect, and sometimes we need to have
+				difficult conversations. At work, I leave my ego at the door and
+				understand that constructive feedback is necessary to improve.
+			</li>
+			<li>
+				I like <strong>agile development</strong>. I think teams of
+				engineers work best when employing agile principles, and it's
+				fantastic that the tech industry has embraced it so much. I
+				think it should be adapted to each team's needs rather than
+				followed to the letter, but most teams I've been on have
+				understood this well, and were much smoother to be a part of
+				because of it.
+			</li>
+			<li>
+				I understand <strong>where I fit in</strong> on my team. I've been
+				in positions where I've led projects and I've been in positions where
+				I've taken a back seat to others. Those roles tend to be fluid, especially
+				on small teams. I have experience with that, and I'm comfortable
+				no matter where the responsibility lies. I think everyone on a team
+				should be able to give feedback about projects, but sometimes you're
+				in charge and sometimes you're not. I have a solid amount of experience
+				across that spectrum and I do what I can to conduct myself in the
+				role that fits the team the most.
+			</li>
 		</ul>
-	</main>
+	</section>
+	<section>
+		<h3>
+			What you should know about me as a <span class="cutout"
+				>programmer</span
+			>
+		</h3>
+		<ul>
+			<li>
+				I'm <strong>meticulous</strong>. Sometimes it takes me a bit
+				longer than others to write similar code, but I think I output
+				better quality code as a result. I'm committed to doing things
+				the right way, not the quick-and-dirty way. Tech debt is a real
+				problem, and one that's bitten me in the ass too many times. I
+				think there are exceptions in the professional world, where
+				sometimes deadlines are more important, but I still strive not
+				to take shortcuts that will become hindrances later down the
+				line.
+			</li>
+			<li>
+				I'm a strong proponent of <strong>accessibility</strong>. I
+				believe that no disability or condition should hold anyone back
+				from experiencing the things everyone else can, which is why I
+				think it's so important to work to make things accessible.
+				Whether that's colorblind support in video games, screen
+				reader-friendly websites, or just accurate subtitles on YouTube,
+				we as programmers should strive to achieve maximum
+				accessibility&mdash;for everyone.
+			</li>
+			<li>
+				I'm <strong>pro-open-source</strong>. I cut my teeth working on
+				open source projects, and I continue to learn from programmers
+				who have been kind enough to open-source their code. I've seen
+				dozens of projects flourish due to the efforts of the open
+				source community upholding them, and it heartens me that this
+				kind of collective effort works so consistently. It allows
+				beginners to learn more effectively, and it allows projects to
+				benefit from the generous contributions of talented coders and
+				thoughtful discussions. Open source is truly better for everyone
+				involved, from maintainer to end user.
+			</li>
+		</ul>
+	</section>
+	<section>
+		<h3>
+			What you should know about me as a <span class="cutout">person</span
+			>
+		</h3>
+		<ul>
+			<li>
+				I <strong>love to learn</strong>. Whether it's a new programming
+				concept, an interesting period in history, or just something I
+				think is cool, I love to learn new things. Going to the library
+				and just picking out a book that seems interesting is one of my
+				favorite things to do, and I always learn something interesting.
+			</li>
+			<li>
+				I'm an <strong><span id="mbti"></span></strong>. Nah, I'm just
+				kidding, I don't really believe in personality test stuff. In
+				fact, if you refresh the page it'll probably say something
+				different. I guess the point is I don't believe in sorting
+				people into little boxes. I'd like to think that means I get
+				along with most people pretty well. (I've heard some jobs make
+				you take that personality test before they hire you. I would
+				very much like to stay away from those positions.)
+			</li>
+			<li>
+				I like <strong>sports and games</strong>! I play a lot of video
+				games, and I get especially sucked in by ones with a lot of
+				moving parts, literally (like <a
+					href="https://www.factorio.com/"
+					class="link">Factorio</a
+				>) or figuratively (like <a
+					href="https://www.paradoxinteractive.com/games/europa-universalis-iv/about"
+					class="link">Europa Universalis 4</a
+				>). You can also find me watching a sports match pretty often. I
+				especially love baseball and the Blue Jays, but I like just
+				about everything. I don't want to take up space listing all my
+				favorite teams, so here they all are at once. Maybe you can find
+				yours! {
+					teams.map((team) => (
+						<span class="absolute ml-2 opacity-50">{team}</span>
+					))
+				}
+			</li>
+		</ul>
+	</section>
+	<p class="mt-8">
+		Well, I guess that about sums it up. If you want to talk to me, feel
+		completely free to <a href="/contact" class="link">reach out to me</a>,
+		and check out the rest of this website to learn more about what I've
+		been doing for the past few years.
+	</p>
 </Layout>
-
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+	p {
+		@apply mt-2 text-xl;
 	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
+	h3 {
+		@apply text-3xl font-medium;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	.cutout {
+		@apply my-4 inline-block rotate-3 border-4 border-dashed border-green-700 border-opacity-50 bg-white px-1 font-bold shadow-xl;
 	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
+	li {
+		@apply my-2 list-inside list-disc text-xl;
 	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
+	section {
+		@apply mx-auto mt-4 max-w-[100ch];
 	}
-	.instructions strong {
-		color: rgb(var(--accent));
+	section > h3 {
+		@apply mr-0 ml-auto text-right;
 	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+	section > ul {
+		@apply text-left;
 	}
 </style>
+<script>
+	const mbti =
+		(Math.random() < 0.5 ? "E" : "I") +
+		(Math.random() < 0.5 ? "S" : "N") +
+		(Math.random() < 0.5 ? "T" : "F") +
+		(Math.random() < 0.5 ? "J" : "P");
+	const el = document.getElementById("mbti");
+	if (el) {
+		el.innerText = mbti;
+	}
+</script>

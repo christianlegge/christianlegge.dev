@@ -1,9 +1,12 @@
 ---
 export interface Props {
 	title: string;
+	mainClass?: string;
 }
 
-const { title } = Astro.props;
+const pages = ["Projects", "Experience", "Blog", "Contact"];
+
+const { title, mainClass } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -16,20 +19,72 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<header
+			class="grid h-24 grid-cols-3 items-center px-8 shadow shadow-green-900"
+		>
+			<div>
+				<h1 class="w-fit text-4xl font-black">
+					<a href="/"> Christian Legge</a>
+				</h1>
+				<h2
+					class="text-md w-fit font-light tracking-wide text-gray-600"
+				>
+					<a href="/"> Software Engineer, Person</a>
+				</h2>
+			</div>
+			<ul
+				class="flex w-full items-center justify-center gap-8 text-lg font-bold uppercase italic tracking-wider text-green-900"
+			>
+				{
+					pages.map((page) => (
+						<a
+							href={`/${page.toLowerCase()}`}
+							class={`relative z-10 before:absolute ${
+								Astro.url.pathname.startsWith(
+									"/" + page.toLowerCase()
+								)
+									? "opacity-100 before:left-0 before:w-full"
+									: "opacity-70 before:left-1/2 before:w-0 before:transition-all hover:opacity-100 before:hover:left-0 before:hover:w-full"
+							} before:-bottom-1 before:border-b-2 before:border-green-900`}
+						>
+							{page}
+						</a>
+					))
+				}
+			</ul>
+			<div
+				class="flex items-center justify-end text-lg font-semibold text-gray-600"
+			>
+				<div class="px-2 pt-1">
+					<div class="absolute h-2 w-2 rounded-full bg-green-500">
+					</div>
+					<div class="h-2 w-2 animate-ping rounded-full bg-green-500">
+					</div>
+				</div>
+				<span>Looking for work</span>
+			</div>
+		</header>
+		<main class={`mx-auto px-16 py-12 max-w-[100ch] ${mainClass ?? ""}`}>
+			<slot />
+		</main>
 	</body>
 </html>
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			#da62c4 30%,
+			white 60%
+		);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
+		background-color: #f6f6f6;
 	}
 	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+			DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 </style>

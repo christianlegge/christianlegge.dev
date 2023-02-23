@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon";
+
+const socials: { name: string; url: string; icon: string }[] = [
+	{
+		name: "Twitter",
+		url: "https://twitter.com/christian_legge",
+		icon: "mdi:twitter",
+	},
+	{
+		name: "GitHub",
+		url: "https://github.com/christianlegge",
+		icon: "mdi:github",
+	},
+	{
+		name: "LinkedIn",
+		url: "https://linkedin.com/in/christian-legge",
+		icon: "mdi:linkedin",
+	},
+	{
+		name: "itch.io",
+		url: "https://scatter.itch.io",
+		icon: "simple-icons:itchdotio",
+	},
+];
+---
+
+<Layout title="Christian Legge | Contact">
+	<h2 class="text-3xl font-bold">My social links</h2>
+	<ul class="flex">
+		{
+			socials.map((site) => (
+				<li class="group text-center">
+					<a href={site.url}>
+						<Icon name={site.icon} class="w-16" />
+						<p class="link">{site.name}</p>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+	<h2 class="mt-4 text-3xl font-bold">Email me</h2>
+	<p>
+		You can email me at <a
+			href="mailto:christian@christianlegge.dev"
+			class="link">christian@christianlegge.dev</a
+		> for pretty much anything. I'll probably get back to you reasonably quickly.
+	</p>
+	<h2 class="mt-4 text-3xl font-bold">Call me on my cell phone</h2>
+	<p>
+		For serious inquiries, please contact me via one of the above methods
+		first and I'll be happy to give you my phone number so we can chat,
+		though I'd prefer Zoom or Google Hangouts if possible.
+	</p>
+	<h2 class="mt-4 text-3xl font-bold">Send mail to my house</h2>
+	<p>Please do not do that.</p>
+</Layout>

@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const renderedProjects = await Promise.all(
+	projects.map(async (project) => ({
+		...project,
+		...(await project.render()),
+	}))
+);
+renderedProjects.sort((a, b) => a.data.sortOrder - b.data.sortOrder);
+---
+
+<Layout title="Christian Legge | Projects">
+	<h1 class="heading">My projects</h1>
+	<p>
+		Here is a non-exhaustive list of projects I've worked on in the past.
+		All of these are passion projects, a learning experience, or (almost
+		always) some combination of both.
+	</p>
+	<p>
+		All of my experiece in web design comes from these projects, and I
+		absolutely love creating for the web, especially using modern tech
+		stacks like Astro or NextJS. I think the immense work put into improving
+		the developer experience in recent years is almost entirely thanks to
+		the explosion of open source development on platforms like GitHub, which
+		is just one of the many benefits of open source software.
+	</p>
+	<p>
+		As such, most of the projects below are open source, and GitHub
+		repositories have been linked where applicable.
+	</p>
+	<ul class="cards mt-4 space-y-4">
+		{
+			renderedProjects.map((project) => (
+				<li>
+					<Card {...project.data}>
+						<project.Content />
+					</Card>
+				</li>
+			))
+		}
+	</ul>
+</Layout>
+<style>
+	p {
+		@apply mt-2 text-lg;
+	}
+</style>
