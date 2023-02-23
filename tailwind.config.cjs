@@ -13,8 +13,17 @@ module.exports = {
 				".tailwind-global li": {
 					listStyle: "inside disc",
 				},
-				".heading": {
+				".heading, .blog-post h1": {
 					"@apply text-3xl font-bold": true,
+				},
+				".blog-post p": {
+					"@apply mt-4": true,
+				},
+				".blog-post pre": {
+					"@apply p-4 mt-4 rounded-lg": true,
+				},
+				".blog-post hr": {
+					"@apply mt-4 border-gray-400": true,
 				},
 			});
 		},

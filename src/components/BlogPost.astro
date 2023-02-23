@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Tag from "./Tag.astro";
+
+export interface Props {
+	post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<article class="tailwind-global blog-post">
+	<h1>
+		<a
+			href={`/blog/${post.slug}`}
+			class="link"
+			style={{ textDecorationLine: "none" }}>{post.data.title}</a
+		>
+	</h1>
+	<p class="text-sm opacity-75">
+		{new Date(post.slug).toDateString()}
+	</p>
+	<Content />
+	<ul class="mt-4 flex gap-1">
+		{
+			post.data.tags &&
+				post.data.tags.map((tag) => (
+					<li style={{ listStyleType: "none" }}>
+						<Tag>{tag}</Tag>
+					</li>
+				))
+		}
+	</ul>
+</article>
