@@ -54,9 +54,9 @@ const { title, mainClass } = Astro.props;
 					<a href="/">Engineer, Programmer, Person</a>
 				</h2>
 			</div>
-			<nav>
+			<nav class="justify-self-end lg:place-self-center">
 				<ul
-					class="hidden w-full items-center justify-center gap-8 text-lg font-bold uppercase italic tracking-wider text-green-900 md:flex"
+					class="hidden w-fit items-center justify-center gap-8 text-lg font-bold uppercase italic tracking-wider text-green-900 md:flex"
 				>
 					{pages.map((page) => <NavLink page={page} />)}
 				</ul>

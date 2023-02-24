@@ -6,6 +6,10 @@ module.exports = {
 			colors: {
 				background: "#f6f6f6",
 			},
+			screens: {
+				md: "784px",
+				lg: "1080px",
+			},
 		},
 	},
 	plugins: [
