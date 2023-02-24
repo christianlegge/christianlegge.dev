@@ -18,16 +18,11 @@ const socials: { name: string; url: string; icon: string }[] = [
 		url: "https://linkedin.com/in/christian-legge",
 		icon: "mdi:linkedin",
 	},
-	{
-		name: "itch.io",
-		url: "https://scatter.itch.io",
-		icon: "simple-icons:itchdotio",
-	},
 ];
 ---
 
 <Layout title="Christian Legge | Contact">
-	<h2 class="text-3xl font-bold">My social links</h2>
+	<h2>My social links</h2>
 	<ul class="flex">
 		{
 			socials.map((site) => (
@@ -40,19 +35,35 @@ const socials: { name: string; url: string; icon: string }[] = [
 			))
 		}
 	</ul>
-	<h2 class="mt-4 text-3xl font-bold">Email me</h2>
+	<p class="mt-2">
+		I also write down my thoughts on media sometimes. You can find me on <a
+			href="https://www.goodreads.com/user/show/112926373-christian"
+			class="link">Goodreads</a
+		> for books, <a href="https://letterboxd.com/scatter/" class="link"
+			>Letterboxd</a
+		> for movies, and <a
+			href="https://www.backloggd.com/u/scatter/"
+			class="link">Backloggd</a
+		> for video games.
+	</p>
+	<h2>Email me</h2>
 	<p>
 		You can email me at <a
 			href="mailto:christian@christianlegge.dev"
 			class="link">christian@christianlegge.dev</a
 		> for pretty much anything. I'll probably get back to you reasonably quickly.
 	</p>
-	<h2 class="mt-4 text-3xl font-bold">Call me on my cell phone</h2>
+	<h2>Call me on my cell phone</h2>
 	<p>
 		For serious inquiries, please contact me via one of the above methods
 		first and I'll be happy to give you my phone number so we can chat,
 		though I'd prefer Zoom or Google Hangouts if possible.
 	</p>
-	<h2 class="mt-4 text-3xl font-bold">Send mail to my house</h2>
+	<h2>Send mail to my house</h2>
 	<p>Please do not do that.</p>
 </Layout>
+<style>
+	h2 {
+		@apply mt-4 mb-1 text-3xl font-bold;
+	}
+</style>
