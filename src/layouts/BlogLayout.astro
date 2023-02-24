@@ -13,10 +13,9 @@ const posts = await getCollection("blog");
 
 <Layout
 	title={title}
-	mainClass="grid grid-cols-[1fr_2fr_1fr] w-3/4 max-w-[120rem] gap-4"
+	mainClass="grid grid-cols-[1fr_2fr_1fr] lg:w-3/4 min-w-64 max-w-[120rem] gap-4"
 >
-	<div></div>
-	<section>
+	<section class="col-span-2 lg:col-span-1 lg:col-start-2">
 		<slot />
 	</section>
 	<aside class="text-right">

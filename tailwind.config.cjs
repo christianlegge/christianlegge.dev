@@ -2,7 +2,11 @@
 module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				background: "#f6f6f6",
+			},
+		},
 	},
 	plugins: [
 		function ({ addComponents, theme }) {
@@ -26,8 +30,8 @@ module.exports = {
 					"@apply mt-4 border-gray-400": true,
 				},
 				".blog-post .twitter-tweet": {
-					"@apply mx-auto": true
-				}
+					"@apply mx-auto": true,
+				},
 			});
 		},
 	],
