@@ -2,13 +2,15 @@
 export interface Props {
 	title: string;
 	mainClass?: string;
+	image?: string;
+	description?: string;
 }
 
 import NavLink from "../components/NavLink.astro";
 
 const pages = ["Projects", "Experience", "Blog", "Contact"];
 
-const { title, mainClass } = Astro.props;
+const { title, mainClass, image, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -44,8 +46,11 @@ const { title, mainClass } = Astro.props;
 		<meta name="language" content="English" />
 
 		<!-- Primary Meta Tags -->
-		<meta name="title" content="Christian Legge" />
-		<meta name="description" content="Engineer, Programmer, Person" />
+		<meta name="title" content={title} />
+		<meta
+			name="description"
+			content={description ?? "Engineer, Programmer, Person"}
+		/>
 		<meta
 			name="keywords"
 			content="engineer, programmer, person, portfolio, software, web design, coding, frontend, backend, full stack, web development, developer"
@@ -54,28 +59,31 @@ const { title, mainClass } = Astro.props;
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://christianlegge.dev" />
-		<meta property="og:title" content="Christian Legge" />
+		<meta property="og:title" content={title} />
 		<meta
 			property="og:description"
-			content="Engineer, Programmer, Person"
+			content={description ?? "Engineer, Programmer, Person"}
 		/>
 		<meta
 			property="og:image"
-			content="https://christianlegge.dev/images/me.jpg"
+			content={image ?? "https://christianlegge.dev/images/me.jpg"}
 		/>
 
 		<!-- Twitter -->
-		<meta property="twitter:card" content="summary" />
+		<meta
+			property="twitter:card"
+			content={image ? "summary_large_image" : "summary"}
+		/>
 		<meta property="twitter:url" content="https://christianlegge.dev" />
 		<meta property="twitter:site" content="@christian_legge" />
-		<meta property="twitter:title" content="Christian Legge" />
+		<meta property="twitter:title" content={title} />
 		<meta
 			property="twitter:description"
-			content="Engineer, Programmer, Person"
+			content={description ?? "Engineer, Programmer, Person"}
 		/>
 		<meta
 			property="twitter:image"
-			content="https://christianlegge.dev/images/me.jpg"
+			content={image ?? "https://christianlegge.dev/images/me.jpg"}
 		/>
 
 		<title>{title}</title>

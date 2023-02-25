@@ -33,3 +33,19 @@ const { Content } = await post.render();
 		}
 	</ul>
 </article>
+<script>
+	const post = document.getElementsByClassName("blog-post");
+	if (post[0] && post[0].children) {
+		console.log(post[0].children);
+		const textPs = Array.from(post[0].children).filter(
+			(el) => (el as HTMLElement).innerText !== "" && el.tagName === "P"
+		);
+		if (
+			textPs.length >= 2 &&
+			textPs.filter((el) => el.classList.contains("large-first-letter"))
+				.length === 0
+		) {
+			textPs[1].classList.toggle("large-first-letter");
+		}
+	}
+</script>

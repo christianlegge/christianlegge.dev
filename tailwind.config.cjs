@@ -27,6 +27,9 @@ module.exports = {
 				".blog-post p": {
 					"@apply mt-4": true,
 				},
+				".large-first-letter::first-letter": {
+					"@apply text-5xl font-bold text-green-800": true,
+				},
 				".blog-post pre": {
 					"@apply p-4 mt-4 rounded-lg": true,
 				},

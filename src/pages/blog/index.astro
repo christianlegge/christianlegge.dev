@@ -4,24 +4,30 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("blog");
+posts.reverse();
 ---
 
 <BlogLayout title="Christian Legge | Blog">
-	{
-		posts.map((post) => (
-			<div>
-				<div class="post-preview relative max-h-96 overflow-clip">
-					<BlogPost post={post} />
-				</div>
-				<a
-					href={`/blog/${post.slug}`}
-					class="my-2 block w-full rounded-lg bg-green-800 bg-opacity-40 py-2 text-center hover:bg-opacity-30 active:bg-opacity-20"
-				>
-					Read more
-				</a>
-			</div>
-		))
-	}
+	<div class="space-y-8">
+		{
+			posts.map((post) => (
+				<>
+					<div>
+						<div class="post-preview relative max-h-96 overflow-clip">
+							<BlogPost post={post} />
+						</div>
+						<a
+							href={`/blog/${post.slug}`}
+							class="my-2 block w-full rounded-lg bg-green-800 bg-opacity-40 py-2 text-center hover:bg-opacity-30 active:bg-opacity-20"
+						>
+							Read more
+						</a>
+					</div>
+					<hr />
+				</>
+			))
+		}
+	</div>
 </BlogLayout>
 <style>
 	.post-preview::after {
