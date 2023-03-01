@@ -7,9 +7,11 @@ const { page } = Astro.props;
 ---
 
 <a
-	href={`/${page.toLowerCase()}`}
+	href={`/${page.toLowerCase().replace(" ", "-")}`}
 	class={`relative z-10 before:absolute ${
-		Astro.url.pathname.startsWith("/" + page.toLowerCase())
+		Astro.url.pathname.startsWith(
+			"/" + page.toLowerCase().replace(" ", "-")
+		)
 			? "opacity-100 before:left-0 before:w-full"
 			: "opacity-70 before:left-1/2 before:w-0 before:transition-all hover:opacity-100 before:hover:left-0 before:hover:w-full"
 	} before:-bottom-1 before:border-b-2 before:border-green-900`}
