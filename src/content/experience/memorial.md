@@ -1,6 +1,6 @@
 ---
 title: Memorial University
-dates: May–September 2015
+dates: May–August 2015
 icon: images/memorial.jpg
 tags: [PowerShell, Tech support]
 sortOrder: 0
