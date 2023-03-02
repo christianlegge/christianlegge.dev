@@ -1,6 +1,6 @@
 ---
 title: Verafin
-dates: May–September 2017, January–April 2018, September–December 2018
+dates: May–August 2017, January–April 2018, September–December 2018
 icon: images/verafin.jpg
 tags: [Java, ETL, Data processing, Finance]
 sortOrder: 2

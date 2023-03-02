@@ -1,6 +1,6 @@
 ---
 title: EQ Alpha
-dates: November 2020 – December 2021
+dates: November 2020 – November 2021
 icon: images/eq.jpg
 tags: [C++, Redis, Database design, Optimization, Open source]
 sortOrder: 4

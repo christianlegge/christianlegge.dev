@@ -1,6 +1,6 @@
 ---
 title: Snap
-dates: December 2021 – August 2022
+dates: November 2021 – August 2022
 icon: images/snap.png
 tags: [Java, Docker, Kubernetes, AWS, GCP, C++]
 sortOrder: 5
