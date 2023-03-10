@@ -1,7 +1,7 @@
 ---
 title: "christianlegge.dev"
 tags: ["Astro", "Static site generation", "Tailwind", "TypeScript"]
-sortOrder: 10
+sortOrder: 0
 ---
 
 The website you are currently on was built from scratch, by me ([as much as anything can be built from scratch, anyway](https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants)). I used [Astro](https://astro.build/), a fast web framework primarily intended for static site generation.

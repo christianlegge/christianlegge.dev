@@ -13,7 +13,7 @@ tags:
         "tRPC",
     ]
 url: "https://cojiro.app"
-sortOrder: 0
+sortOrder: 10
 ---
 
 Cojiro is a web app intended to simulate playthroughs of [Ocarina of Time Randomizer](https://ootrandomizer.com), a game which randomizes the locations of items in The Legend of Zelda: Ocarina of Time. Players feel that the practice helps them make better routing decisions, which is helpful when competing in races.
