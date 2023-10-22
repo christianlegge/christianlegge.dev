@@ -54,6 +54,9 @@ module.exports = {
 				".tailwind-global code": {
 					"@apply bg-gray-300 p-1 rounded": true
 				},
+				".tailwind-global pre > code": {
+					"@apply bg-transparent": true
+				},
 				".heading, .blog-post h1": {
 					"@apply text-3xl font-bold": true
 				},
