@@ -19,7 +19,7 @@ const { Content } = await post.render();
 		>
 	</h1>
 	<p class="text-sm opacity-75">
-		{new Date(post.slug).toDateString()}
+		{new Date(post.slug).toUTCString().slice(0, 16)}
 	</p>
 	<Content />
 	<ul class="mt-4 flex flex-wrap gap-1">
