@@ -1,0 +1,63 @@
+---
+import NavLink from "../components/NavLink.astro";
+
+const pages = ["Projects", "Experience", "Blog", "Contact"];
+---
+
+<header
+	class="flex h-24 items-center justify-between px-8 shadow shadow-green-900 md:grid md:grid-cols-2 lg:grid-cols-3">
+	<a href="/">
+		<div class="flex items-center gap-4">
+			<img
+				src="/images/me.jpg"
+				class="aspect-square h-20"
+				style="clip-path:circle(45%)"
+			/>
+			<div>
+				<h1 class="w-fit text-4xl font-black">Christian Legge</h1>
+				<h2 class="text-md w-fit font-light tracking-wide text-gray-600">
+					Engineer, Programmer, Person
+				</h2>
+			</div>
+		</div>
+	</a>
+	<nav class="justify-self-end lg:place-self-center">
+		<ul
+			class="hidden w-fit items-center justify-center gap-8 text-lg font-bold uppercase italic tracking-wider text-green-900 md:flex">
+			{pages.map((page) => <NavLink page={page} />)}
+		</ul>
+		<div
+			class="flex h-5 w-8 cursor-pointer flex-col justify-between md:hidden"
+			id="nav-hamburger">
+			<div class="h-1/5 w-full bg-green-900 transition-all" id="hamburger-top">
+			</div>
+			<div class="h-1/5 w-full bg-green-900"></div>
+			<div
+				class="h-1/5 w-full bg-green-900 transition-all"
+				id="hamburger-bottom">
+			</div>
+		</div>
+		<div
+			class="absolute right-4 top-28 isolate z-50 translate-x-60 bg-background px-8 py-8 shadow-md shadow-green-900 transition-all md:hidden"
+			id="nav-popup">
+			<ul
+				class="relative z-50 flex w-full flex-col items-center justify-center gap-8 text-lg font-bold uppercase italic tracking-wider text-green-900">
+				{pages.map((page) => <NavLink page={page} />)}
+			</ul>
+		</div>
+	</nav>
+	<div
+		class="hidden items-center justify-end text-lg font-semibold text-gray-600 lg:flex">
+		<!-- <div class="px-2 pt-1">
+					<div class="absolute h-2 w-2 rounded-full bg-green-500">
+					</div>
+					<div class="h-2 w-2 animate-ping rounded-full bg-green-500">
+					</div>
+				</div>
+				<span>Looking for work</span> -->
+		<div class="px-2 pt-1">
+			<div class="h-2 w-2 rounded-full bg-red-500"></div>
+		</div>
+		<span>Currently employed full-time</span>
+	</div>
+</header>
