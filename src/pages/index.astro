@@ -26,8 +26,8 @@ const teams = [
 		you!
 	</p>
 	<p>
-		For the basics&mdash;I'm a guy, I'm 27 years old, I live in Mississauga,
-		Ontario, Canada. I prefer remote work.
+		For the basics&mdash;I'm a guy, I'm <span id="age">27</span> years old, I live
+		in Mississauga, Ontario, Canada. I prefer remote work.
 	</p>
 	<section>
 		<h3>
@@ -182,8 +182,18 @@ const teams = [
 		(Math.random() < 0.5 ? "S" : "N") +
 		(Math.random() < 0.5 ? "T" : "F") +
 		(Math.random() < 0.5 ? "J" : "P");
-	const el = document.getElementById("mbti");
-	if (el) {
-		el.innerText = mbti;
+	const mbtiEl = document.getElementById("mbti");
+	if (mbtiEl) {
+		mbtiEl.innerText = mbti;
+	}
+	const today = new Date();
+	let age = today.getFullYear() - 1996;
+	const month = today.getMonth() - 4;
+	if (month < 0 || (month === 0 && today.getDate() < 2)) {
+		age--;
+	}
+	const ageEl = document.getElementById("age");
+	if (ageEl) {
+		ageEl.innerText = age.toString();
 	}
 </script>
