@@ -1,7 +1,7 @@
 ---
 title: "pmr-tracker"
 image: "images/pmr-tracker.png"
-tags: ["Vue", "Tailwind", "TypeScript", "API"]
+tags: ["Vue", "TypeScript", "API"]
 url: "https://pmr-tracker.christianlegge.dev"
 sortOrder: 11
 ---
