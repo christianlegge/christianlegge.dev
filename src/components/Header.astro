@@ -22,7 +22,7 @@ const pages = ["Projects", "Experience", "Blog", "Contact"];
 			</div>
 		</div>
 	</a>
-	<nav class="relative justify-self-end lg:place-self-center">
+	<nav class="relative m-0 justify-self-end p-0 lg:place-self-center">
 		<ul
 			class="hidden w-fit items-center justify-center gap-8 text-lg font-bold uppercase italic tracking-wider text-green-900 md:flex">
 			{pages.map((page) => <NavLink page={page} />)}
@@ -41,7 +41,7 @@ const pages = ["Projects", "Experience", "Blog", "Contact"];
 			</div>
 		</div>
 		<div
-			class="absolute -right-60 top-28 z-50 inline-block w-40 bg-background px-8 py-8 shadow-md shadow-green-900 transition-all md:hidden"
+			class="absolute -right-60 top-28 z-50 w-40 bg-background px-8 py-8 shadow-md shadow-green-900 transition-all md:hidden"
 			id="nav-popup">
 			<ul
 				class="relative z-50 flex w-full flex-col items-center justify-center gap-8 text-lg font-bold uppercase italic tracking-wider text-green-900">
