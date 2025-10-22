@@ -2,17 +2,17 @@
 title: "Cojiro"
 image: "images/cojiro.png"
 tags:
-    [
-        "React",
-        "NextJS",
-        "Prisma",
-        "PostgreSQL",
-        "T3",
-        "Tailwind",
-        "TypeScript",
-        "tRPC",
-    ]
-url: "https://cojiro.app"
+  [
+    "React",
+    "NextJS",
+    "Prisma",
+    "PostgreSQL",
+    "T3",
+    "Tailwind",
+    "TypeScript",
+    "tRPC"
+  ]
+url: "https://cojiro.christianlegge.dev"
 sortOrder: 10
 ---
 
