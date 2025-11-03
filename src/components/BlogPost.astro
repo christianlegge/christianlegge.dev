@@ -18,7 +18,7 @@ const { Content } = await post.render();
 			style={{ textDecorationLine: "none" }}>{post.data.title}</a
 		>
 	</h1>
-	<p class="text-sm opacity-75">
+	<p class="text-sm opacity-75" id="post-date">
 		{new Date(post.slug).toUTCString().slice(0, 16)}
 	</p>
 	<Content />
@@ -39,18 +39,23 @@ const { Content } = await post.render();
 	}
 </style>
 <script>
+	function containsImage(el) {
+		return el.getElementsByTagName("img").length > 0;
+	}
 	const post = document.getElementsByClassName("blog-post");
 	if (post[0] && post[0].children) {
-		console.log(post[0].children);
 		const textPs = Array.from(post[0].children).filter(
 			(el) => (el as HTMLElement).innerText !== "" && el.tagName === "P"
 		);
-		if (
-			textPs.length >= 2 &&
-			textPs.filter((el) => el.classList.contains("large-first-letter"))
-				.length === 0
-		) {
-			textPs[1].classList.toggle("large-first-letter");
+		let largeNext = true;
+		for (const postEl of Array.from(post[0].children)) {
+			if (postEl.id !== "post-date" && postEl.id !== "first-letter-exclude" && !containsImage(postEl) && largeNext && (postEl as HTMLElement).innerText !== "" && postEl.tagName === "P") {
+				postEl.classList.toggle("large-first-letter");
+				largeNext = false;
+			}
+			else if (postEl.tagName === "HR") {
+				largeNext = true;
+			}
 		}
 	}
 </script>
