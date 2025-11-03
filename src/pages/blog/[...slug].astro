@@ -16,13 +16,14 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-console.log(post);
+
+const firstPara = post.body.split("\n").find(el => el.length > 200);
 ---
 
 <BlogLayout
 	title={post.data.title}
 	image={post.data.image}
-	description={post.data.description ?? "A blog post by Christian Legge"}
+	description={firstPara ?? "A blog post by Christian Legge"}
 >
 	<a href="/blog" class="link mb-4 inline-block">&lt; Back</a>
 	<BlogPost post={post} />
