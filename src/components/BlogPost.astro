@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import "@fontsource-variable/newsreader";
 import Tag from "./Tag.astro";
 
 export interface Props {
@@ -36,6 +37,9 @@ const { Content } = await post.render();
 <style>
 	body {
 		font-size: 18px;
+	}
+	article {
+		font-family: "Newsreader", serif;
 	}
 </style>
 <script>
