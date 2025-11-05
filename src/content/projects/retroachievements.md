@@ -8,7 +8,7 @@ tags:
     "Game development",
     "Game design",
     "React",
-    "Laravel"
+    "Laravel",
   ]
 url: "https://retroachievements.org/user/scatter"
 sortOrder: 10.5

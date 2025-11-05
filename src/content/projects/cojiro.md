@@ -10,7 +10,7 @@ tags:
     "T3",
     "Tailwind",
     "TypeScript",
-    "tRPC"
+    "tRPC",
   ]
 url: "https://cojiro.christianlegge.dev"
 sortOrder: 10

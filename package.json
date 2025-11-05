@@ -7,7 +7,8 @@
 		"start": "sirv dist",
 		"build": "astro build",
 		"preview": "astro preview",
-		"astro": "astro"
+		"astro": "astro",
+		"format": "prettier"
 	},
 	"dependencies": {
 		"@astrojs/tailwind": "^3.0.1",
@@ -19,6 +20,7 @@
 	},
 	"devDependencies": {
 		"prettier": "^2.8.4",
+		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.2.3"
 	}
 }

@@ -1,10 +1,20 @@
 {
-	"useTabs": true,
-	"singleQuote": false,
-	"trailingComma": "none",
-	"semi": true,
+	"arrowParens": "avoid",
+	"bracketSameLine": false,
+	"bracketSpacing": true,
+	"embeddedLanguageFormatting": "auto",
+	"endOfLine": "lf",
+	"htmlWhitespaceSensitivity": "css",
+	"insertPragma": false,
+	"jsxSingleQuote": false,
 	"printWidth": 80,
-	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
-	"pluginSearchDirs": false,
-	"bracketSameLine": true
+	"proseWrap": "preserve",
+	"quoteProps": "as-needed",
+	"requirePragma": false,
+	"semi": true,
+	"singleAttributePerLine": false,
+	"singleQuote": false,
+	"trailingComma": "es5",
+	"useTabs": true,
+	"vueIndentScriptAndStyle": false
 }
