@@ -1,5 +1,5 @@
 {
-	"arrowParens": "avoid",
+	"arrowParens": "always",
 	"bracketSameLine": false,
 	"bracketSpacing": true,
 	"embeddedLanguageFormatting": "auto",
@@ -16,5 +16,6 @@
 	"singleQuote": false,
 	"trailingComma": "es5",
 	"useTabs": true,
-	"vueIndentScriptAndStyle": false
+	"vueIndentScriptAndStyle": false,
+	"plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
 }

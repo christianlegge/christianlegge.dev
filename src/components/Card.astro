@@ -22,11 +22,7 @@ const { title, image, tags, url, icon, extra } = Astro.props;
 	{
 		image && (
 			<div class="h-full w-full">
-				<img
-					src={image}
-					alt={title}
-					class="-z-10 h-full w-full object-cover"
-				/>
+				<img src={image} alt={title} class="-z-10 h-full w-full object-cover" />
 			</div>
 		)
 	}
@@ -47,16 +43,9 @@ const { title, image, tags, url, icon, extra } = Astro.props;
 				<h1 class="text-3xl font-semibold">
 					{
 						url ? (
-							<a
-								href={url}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
+							<a href={url} target="_blank" rel="noopener noreferrer">
 								{title}
-								<Icon
-									name="lucide:external-link"
-									class="inline w-4"
-								/>
+								<Icon name="lucide:external-link" class="inline w-4" />
 							</a>
 						) : (
 							<span>{title}</span>

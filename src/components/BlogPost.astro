@@ -4,7 +4,7 @@ import "@fontsource-variable/newsreader";
 import Tag from "./Tag.astro";
 
 export interface Props {
-	post: CollectionEntry<"blog">;
+	post: CollectionEntry;
 }
 
 const { post } = Astro.props;
@@ -53,11 +53,17 @@ const { Content } = await post.render();
 		);
 		let largeNext = true;
 		for (const postEl of Array.from(post[0].children)) {
-			if (postEl.id !== "post-date" && postEl.id !== "first-letter-exclude" && !containsImage(postEl) && largeNext && (postEl as HTMLElement).innerText !== "" && postEl.tagName === "P") {
+			if (
+				postEl.id !== "post-date" &&
+				postEl.id !== "first-letter-exclude" &&
+				!containsImage(postEl) &&
+				largeNext &&
+				(postEl as HTMLElement).innerText !== "" &&
+				postEl.tagName === "P"
+			) {
 				postEl.classList.toggle("large-first-letter");
 				largeNext = false;
-			}
-			else if (postEl.tagName === "HR") {
+			} else if (postEl.tagName === "HR") {
 				largeNext = true;
 			}
 		}

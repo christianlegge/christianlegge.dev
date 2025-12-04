@@ -12,12 +12,12 @@ export async function getStaticPaths() {
 }
 
 export interface Props {
-	post: CollectionEntry<"blog">;
+	post: CollectionEntry;
 }
 
 const { post } = Astro.props;
 
-const firstPara = post.body.split("\n").find(el => el.length > 200);
+const firstPara = post.body.split("\n").find((el) => el.length > 200);
 console.log(firstPara);
 ---
 
