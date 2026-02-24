@@ -3,6 +3,9 @@
 .card a {
 	@apply text-emerald-800!;
 }
+.card ul {
+	@apply mt-4;
+}
 .card li {
 	@apply list-inside list-disc;
 }
