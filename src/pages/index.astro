@@ -1,9 +1,10 @@
 ---
+import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 ---
 
-<Layout title="christian legge" mainClass="max-w-[65ch] animate-fade-up-in">
+<Layout title="christian legge">
 	<h1 class="text-center text-2xl font-light">christianlegge.dev</h1>
 	<p>
 		welcome to my website. there isn't much going on here, but if you ended
@@ -48,24 +49,6 @@ import Card from "../components/Card.astro";
 </Layout>
 <style>
 	p {
-		@apply mt-2;
-	}
-	h3 {
-		@apply text-3xl font-medium;
-	}
-	.cutout {
-		@apply my-4 inline-block rotate-3 border-4 border-dashed border-green-700 border-opacity-50 bg-white px-1 font-bold shadow-xl;
-	}
-	li {
-		@apply my-2 list-inside list-disc text-xl;
-	}
-	section {
-		@apply mx-auto mt-4 max-w-[100ch];
-	}
-	section > h3 {
-		@apply ml-auto mr-0 text-right;
-	}
-	section > ul {
-		@apply text-left;
+		margin-top: 2rem;
 	}
 </style>

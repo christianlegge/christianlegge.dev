@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+html {
+	font-family: system-ui, sans-serif;
+	color: #fff;
+	font-weight: 300;
+	background: black;
+}
+body {
+	@apply m-0 h-full w-screen overflow-x-hidden bg-linear-to-tr from-slate-900 to-slate-700;
+}
+strong {
+	font-weight: 900;
+}
+code {
+	font-family:
+		Menlo,
+		Monaco,
+		Lucida Console,
+		Liberation Mono,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Courier New,
+		monospace;
+}
+.arrow-top {
+	@apply translate-x-3 translate-y-1 scale-x-50 rotate-45;
+}
+.arrow-bottom {
+	@apply translate-x-3 -translate-y-1 scale-x-50 -rotate-45;
+}

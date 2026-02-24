@@ -1,9 +1,13 @@
 import { defineConfig } from "astro/config";
-
-// https://astro.build/config
-import tailwind from "@astrojs/tailwind";
+import icon from "astro-icon";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind()],
+	integrations: [icon()],
+	site: "https://christianlegge.dev",
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });
+

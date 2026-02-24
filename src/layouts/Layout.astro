@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 export interface Props {
 	title: string;
 	mainClass?: string;
@@ -12,7 +14,7 @@ const { title, mainClass, image, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="m-0 h-full w-screen overflow-x-hidden">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -89,7 +91,7 @@ const { title, mainClass, image, description } = Astro.props;
 	<body class="m-0 h-full w-screen overflow-x-hidden">
 		<Header />
 		<main
-			class={`mx-auto lg:px-16 px-8 py-12 max-w-[100ch] z-0 relative ${
+			class={`mx-auto lg:px-16 px-8 py-12 max-w-[65ch] z-0 relative ${
 				mainClass ?? ""
 			}`}
 		>
@@ -97,68 +99,3 @@ const { title, mainClass, image, description } = Astro.props;
 		</main>
 	</body>
 </html>
-<style is:global>
-	html {
-		font-family: system-ui, sans-serif;
-		color: #fff;
-		font-weight: 300;
-		@apply bg-gradient-to-tr from-slate-900 to-slate-700;
-	}
-	strong {
-		font-weight: 900;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-	.arrow-top {
-		@apply translate-x-3 translate-y-1 rotate-[45deg] scale-x-50;
-	}
-	.arrow-bottom {
-		@apply -translate-y-1 translate-x-3 rotate-[-45deg] scale-x-50;
-	}
-</style>
-<script>
-	function toggleNavPopup() {
-		const el = document.getElementById("nav-popup");
-		const top = document.getElementById("hamburger-top");
-		const bottom = document.getElementById("hamburger-bottom");
-		if (el && top && bottom) {
-			el.classList.toggle("right-4");
-			el.classList.toggle("-right-60");
-			top.classList.toggle("arrow-top");
-			bottom.classList.toggle("arrow-bottom");
-		}
-	}
-	function hideNavPopup() {
-		const el = document.getElementById("nav-popup");
-		const top = document.getElementById("hamburger-top");
-		const bottom = document.getElementById("hamburger-bottom");
-		if (el && top && bottom) {
-			el.classList.remove("right-4");
-			el.classList.add("-right-60");
-			top.classList.remove("arrow-top");
-			bottom.classList.remove("arrow-bottom");
-		}
-	}
-	const navToggle = document.getElementById("nav-hamburger");
-	const navPopup = document.getElementById("nav-popup");
-	if (navToggle && navPopup) {
-		navToggle.addEventListener("click", toggleNavPopup);
-		document.addEventListener("click", function (event) {
-			if (
-				!navToggle.contains(event.target as Node) &&
-				!navPopup.contains(event.target as Node)
-			) {
-				hideNavPopup();
-			}
-		});
-	}
-</script>
