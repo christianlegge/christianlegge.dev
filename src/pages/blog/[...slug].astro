@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import Tag from "../../components/Tag.astro";
 import BlogPost from "../../components/BlogPost.astro";
@@ -14,13 +14,12 @@ export async function getStaticPaths() {
 }
 
 export interface Props {
-	post: CollectionEntry;
+	post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
 
-const firstPara = post.body.split("\n").find((el) => el.length > 200);
-console.log(firstPara);
+const firstPara = post.body.split("\n").find((el) => el.length > 100);
 ---
 
 <BlogLayout

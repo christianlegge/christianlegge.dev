@@ -12,7 +12,7 @@ export interface Props {
 const { title, image, description } = Astro.props;
 
 const posts = await getCollection("blog");
-posts.reverse();
+posts.sort((a, b) => b.slug.localeCompare(a.slug));
 ---
 
 <Layout title={title} image={image} description={description}>
