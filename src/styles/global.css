@@ -20,6 +20,7 @@ code {
 		Bitstream Vera Sans Mono,
 		Courier New,
 		monospace;
+	@apply rounded bg-gray-300 p-1 text-black;
 }
 h1 {
 	@apply text-2xl;
@@ -29,4 +30,16 @@ p {
 }
 a {
 	@apply font-medium text-fuchsia-100 italic underline hover:text-fuchsia-200;
+}
+pre {
+	@apply mt-4 rounded-lg bg-gray-300 p-4;
+}
+pre > code {
+	@apply bg-transparent text-white;
+}
+hr {
+	@apply mt-4 border-gray-400;
+}
+.large-first-letter::first-letter {
+	@apply text-5xl font-bold text-fuchsia-100;
 }
