@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
 html {
-	font-family: system-ui, sans-serif;
-	color: #fff;
-	font-weight: 300;
-	background: black;
+	@apply min-h-screen;
 }
+
 body {
-	@apply m-0 h-full w-screen overflow-x-hidden bg-linear-to-tr from-slate-900 to-slate-700;
+	@apply m-0 h-full w-screen overflow-x-hidden bg-linear-to-tr from-slate-900 to-slate-700 font-light text-white selection:bg-fuchsia-200 selection:text-emerald-900;
 }
 strong {
 	font-weight: 900;
