@@ -4,9 +4,9 @@ import NavLink from "../components/NavLink.astro";
 const pages = ["home", "projects", "experience", "blog"];
 ---
 
-<header class="absolute top-8 left-8">
+<header class="pt-8 pl-8">
 	<nav>
-		<ul class="flex flex-col gap-2">
+		<ul class="mx-auto flex max-w-[65ch] gap-2 lg:flex-col">
 			{pages.map((page) => <NavLink page={page} />)}
 		</ul>
 	</nav>

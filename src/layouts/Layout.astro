@@ -88,12 +88,12 @@ const { title, mainClass, image, description } = Astro.props;
 
 		<title>{title}</title>
 	</head>
-	<body class="m-0 h-full w-screen overflow-x-hidden">
+	<body
+		class="m-0 grid h-full w-screen overflow-x-hidden pb-16 lg:grid-cols-[1fr_65ch_1fr]"
+	>
 		<Header />
 		<main
-			class={`mx-auto lg:px-16 px-8 py-12 max-w-[65ch] z-0 relative ${
-				mainClass ?? ""
-			}`}
+			class={`mx-auto pt-8 max-w-[65ch] max-lg:px-4 z-0 relative ${mainClass ?? ""}`}
 		>
 			<slot />
 		</main>
