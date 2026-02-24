@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-a {
+.card a {
 	@apply text-emerald-800!;
 }
-li ul > li {
+.card li {
 	@apply list-inside list-disc;
 }
