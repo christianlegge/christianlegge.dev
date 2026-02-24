@@ -11,7 +11,7 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<article class="tailwind-global blog-post">
+<article class="blog-post">
 	<h1>
 		<a
 			href={`/blog/${post.slug}`}
@@ -35,9 +35,6 @@ const { Content } = await post.render();
 	</ul>
 </article>
 <style>
-	body {
-		font-size: 18px;
-	}
 	article {
 		font-family: "Newsreader", serif;
 	}
