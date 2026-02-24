@@ -3,3 +3,6 @@
 a {
 	@apply text-emerald-800!;
 }
+li ul > li {
+	@apply list-inside list-disc;
+}
