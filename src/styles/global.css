@@ -25,5 +25,8 @@ h1 {
 	@apply text-center text-2xl;
 }
 p {
-	@apply mt-2;
+	@apply mt-4;
+}
+a {
+	@apply font-medium text-fuchsia-100 italic underline hover:text-fuchsia-200;
 }

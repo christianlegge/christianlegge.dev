@@ -13,11 +13,11 @@ console.log(page);
 
 <a
 	href={`/${page === "home" ? "" : page.toLowerCase()}`}
-	class={`relative z-10 before:absolute w-fit ${
+	class={`text-white! not-italic! no-underline! relative z-10 before:absolute w-fit before:-bottom-0.5 before:border-b before:border-white ${
 		current
 			? "opacity-100 before:left-0 before:w-full font-medium"
-			: "opacity-70 before:left-1/2 before:w-0 before:transition-all hover:opacity-100 hover:before:left-0 hover:before:w-full"
-	} before:-bottom-0.5 before:border-b before:border-white`}
+			: "opacity-70 before:left-1/2 before:w-0 font-light! before:transition-all hover:opacity-100 hover:before:left-0 hover:before:w-full"
+	}`}
 >
 	{page}
 </a>
