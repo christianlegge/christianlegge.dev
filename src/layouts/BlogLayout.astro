@@ -18,7 +18,10 @@ posts.reverse();
 	<section class="col-span-2 lg:col-span-1 lg:col-start-2">
 		<slot />
 	</section>
-	<aside class="text-left md:text-right">
+	<aside
+		class="mx-auto p-8 text-left max-lg:w-[65ch] lg:text-right"
+		slot="after-main"
+	>
 		<h3 class="text-sm tracking-wider uppercase opacity-75">Archive</h3>
 		<ol class="space-y-2">
 			{
