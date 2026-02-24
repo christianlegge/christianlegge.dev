@@ -19,6 +19,8 @@ const socials: { name: string; url: string; icon: string }[] = [
 		icon: "mdi:linkedin",
 	},
 ];
+
+return new Response(null, { status: 404 });
 ---
 
 <Layout title="Christian Legge | Contact">
@@ -62,8 +64,3 @@ const socials: { name: string; url: string; icon: string }[] = [
 	<h2>Send mail to my house</h2>
 	<p>Please do not do that.</p>
 </Layout>
-<style>
-	h2 {
-		@apply mt-4 mb-1 text-3xl font-bold;
-	}
-</style>

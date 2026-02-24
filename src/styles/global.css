@@ -21,9 +21,9 @@ code {
 		Courier New,
 		monospace;
 }
-.arrow-top {
-	@apply translate-x-3 translate-y-1 scale-x-50 rotate-45;
+h1 {
+	@apply text-center text-2xl;
 }
-.arrow-bottom {
-	@apply translate-x-3 -translate-y-1 scale-x-50 -rotate-45;
+p {
+	@apply mt-2;
 }
