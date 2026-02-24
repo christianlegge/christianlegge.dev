@@ -25,6 +25,9 @@ code {
 h1 {
 	@apply text-2xl;
 }
+h2 {
+	@apply mt-4 text-xl;
+}
 p {
 	@apply mt-4;
 }
