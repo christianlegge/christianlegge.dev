@@ -3,10 +3,12 @@ import { CollectionEntry, getCollection } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import Tag from "../../components/Tag.astro";
 import BlogPost from "../../components/BlogPost.astro";
+import { titleToSlug } from "../../util/blogTitle";
 export async function getStaticPaths() {
 	const blogPosts = await getCollection("blog");
+
 	return blogPosts.map((post) => ({
-		params: { slug: post.slug },
+		params: { slug: titleToSlug(post.data.title) },
 		props: { post },
 	}));
 }
@@ -22,7 +24,7 @@ console.log(firstPara);
 ---
 
 <BlogLayout
-	title={post.data.title}
+	title={`${post.data.title} - christianlegge.dev`}
 	image={post.data.image}
 	description={firstPara ?? "A blog post by Christian Legge"}
 >

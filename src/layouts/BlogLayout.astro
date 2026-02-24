@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "./Layout.astro";
+import { titleToSlug } from "../util/blogTitle";
 
 export interface Props {
 	title: string;
@@ -27,10 +28,15 @@ posts.reverse();
 			{
 				posts.map((post) => (
 					<li>
-						{Astro.url.pathname.includes(post.slug) ? (
+						{Astro.url.pathname.includes(
+							titleToSlug(post.data.title)
+						) ? (
 							<span>{post.data.title}</span>
 						) : (
-							<a href={`/blog/${post.slug}`} class="link">
+							<a
+								href={`/blog/${titleToSlug(post.data.title)}`}
+								class="link"
+							>
 								{post.data.title}
 							</a>
 						)}

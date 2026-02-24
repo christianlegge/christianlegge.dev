@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import "@fontsource-variable/newsreader";
 import Tag from "./Tag.astro";
+import { titleToSlug } from "../util/blogTitle";
 
 export interface Props {
 	post: CollectionEntry;
@@ -14,7 +15,7 @@ const { Content } = await post.render();
 <article class="blog-post">
 	<h1>
 		<a
-			href={`/blog/${post.slug}`}
+			href={`/blog/${titleToSlug(post.data.title)}`}
 			class="link"
 			style={{ textDecorationLine: "none" }}>{post.data.title}</a
 		>

@@ -2,6 +2,7 @@
 import BlogPost from "../../components/BlogPost.astro";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import { getCollection } from "astro:content";
+import { titleToSlug } from "../../util/blogTitle";
 
 const posts = await getCollection("blog");
 posts.reverse();
@@ -17,7 +18,7 @@ posts.reverse();
 						<BlogPost post={post} />
 					</div>
 					<a
-						href={`/blog/${post.slug}`}
+						href={`/blog/${titleToSlug(post.data.title)}`}
 						class="my-2 block w-full rounded-lg bg-linear-to-b from-slate-300 to-slate-400 py-2 text-center text-black! not-italic! no-underline!"
 					>
 						Full post
