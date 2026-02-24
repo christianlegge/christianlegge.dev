@@ -22,7 +22,7 @@ code {
 		monospace;
 }
 h1 {
-	@apply text-center text-2xl;
+	@apply text-2xl;
 }
 p {
 	@apply mt-4;

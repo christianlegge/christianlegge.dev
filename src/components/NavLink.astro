@@ -8,7 +8,6 @@ const current =
 	page === "home"
 		? Astro.url.pathname === "/"
 		: Astro.url.pathname.startsWith(`/${page.toLowerCase()}`);
-console.log(page);
 ---
 
 <a
