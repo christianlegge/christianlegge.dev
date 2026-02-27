@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 export interface Props {
-	title: string;
+	title?: string;
 	mainClass?: string;
 	image?: string;
 	description?: string;
@@ -11,6 +11,8 @@ export interface Props {
 import Header from "../components/Header.astro";
 
 const { title, mainClass, image, description } = Astro.props;
+
+const finalTitle = title ? `${title} | christian legge` : "christian legge";
 ---
 
 <!doctype html>
@@ -86,7 +88,7 @@ const { title, mainClass, image, description } = Astro.props;
 			content={image ?? "https://christianlegge.dev/images/me.jpg"}
 		/>
 
-		<title>{title}</title>
+		<title>{finalTitle}</title>
 	</head>
 	<body
 		class="m-0 h-full w-screen overflow-x-hidden pb-16 lg:grid lg:grid-cols-[1fr_65ch_1fr]"

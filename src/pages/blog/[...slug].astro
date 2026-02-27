@@ -23,7 +23,7 @@ const firstPara = post.body.split("\n").find((el) => el.length > 80);
 ---
 
 <BlogLayout
-	title={`${post.data.title} - christianlegge.dev`}
+	title={post.data.title}
 	image={post.data.image}
 	description={firstPara ?? "A blog post by Christian Legge"}
 >
