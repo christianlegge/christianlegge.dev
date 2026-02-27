@@ -48,24 +48,18 @@ const finalTitle = title ? `${title} | christian legge` : "christian legge";
 		<meta name="language" content="English" />
 
 		<!-- Primary Meta Tags -->
-		<meta name="title" content={title} />
-		<meta
-			name="description"
-			content={description ?? "Engineer, Programmer, Person"}
-		/>
+		<meta name="title" content={finalTitle} />
+		<meta name="description" content={description ?? "my website"} />
 		<meta
 			name="keywords"
-			content="engineer, programmer, person, portfolio, software, web design, coding, frontend, backend, full stack, web development, developer"
+			content="engineering, programmer, person, portfolio, software, web design, coding, frontend, backend, full stack, web development, developer, blog, ai"
 		/>
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://christianlegge.dev" />
-		<meta property="og:title" content={title} />
-		<meta
-			property="og:description"
-			content={description ?? "Engineer, Programmer, Person"}
-		/>
+		<meta property="og:title" content={finalTitle} />
+		<meta property="og:description" content={description ?? "my website"} />
 		<meta
 			property="og:image"
 			content={image ?? "https://christianlegge.dev/images/me.jpg"}
@@ -77,11 +71,11 @@ const finalTitle = title ? `${title} | christian legge` : "christian legge";
 			content={image ? "summary_large_image" : "summary"}
 		/>
 		<meta property="twitter:url" content="https://christianlegge.dev" />
-		<meta property="twitter:site" content="@christian_legge" />
-		<meta property="twitter:title" content={title} />
+		<!-- <meta property="twitter:site" content="@christian_legge" /> -->
+		<meta property="twitter:title" content={finalTitle} />
 		<meta
 			property="twitter:description"
-			content={description ?? "Engineer, Programmer, Person"}
+			content={description ?? "my website"}
 		/>
 		<meta
 			property="twitter:image"
