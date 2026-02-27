@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import GameOver from "../components/GameOver.astro";
+
+export const prerender = false;
 
 const messages = [
 	"this place is not a place of honor... no highly esteemed deed is commemorated here... nothing valued is here.",
@@ -39,6 +40,6 @@ const choice = messages[Math.floor(messages.length * Math.random())];
 
 <Layout title="error">
 	<h1>404, page not found.</h1>
-	<GameOver server:defer />
+	<p>{choice}</p>
 	<p><a href="/">return home.</a></p>
 </Layout>
