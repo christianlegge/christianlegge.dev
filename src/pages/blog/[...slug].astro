@@ -1,23 +1,26 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
-import Tag from "../../components/Tag.astro";
 import BlogPost from "../../components/BlogPost.astro";
 import { titleToSlug } from "../../util/blogTitle";
-export async function getStaticPaths() {
-	const blogPosts = await getCollection("blog");
 
-	return blogPosts.map((post) => ({
-		params: { slug: titleToSlug(post.data.title) },
-		props: { post },
-	}));
+export const prerender = false;
+
+const blogPosts = await getCollection("blog");
+
+let post = blogPosts.find((page) => Astro.params.slug === page.slug);
+
+if (post) {
+	return Astro.redirect(titleToSlug(post.data.title));
 }
 
-export interface Props {
-	post: CollectionEntry<"blog">;
-}
+post = blogPosts.find(
+	(page) => Astro.params.slug === titleToSlug(page.data.title)
+);
 
-const { post } = Astro.props;
+if (!post) {
+	return Astro.rewrite("/404");
+}
 
 const firstPara = post.body.split("\n").find((el) => el.length > 80);
 ---
