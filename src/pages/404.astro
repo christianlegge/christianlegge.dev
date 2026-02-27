@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const messages = [
+	"this place is not a place of honor... no highly esteemed deed is commemorated here... nothing valued is here.",
+	"those who stray from the true way, follow a damned path.",
+	"we thought ourselves invincible... we were wrong.",
+	"with this page's death, the thread of prophecy is severed. visit another page to restore the weave of fate, or persist in the doomed world you have created.",
+	"it appears you have reached an end. will you try again?",
+	"your fortress has crumbled to its end.",
+	"it looks like you got your head handed to you. so, how about giving it another shot?",
+	"put these foolish ambitions to rest.",
+	"the radiation has taken its toll. your death was lingering and extremely painful. your adventure is done.",
+	"one last explosion marks your fate as your ship is torn apart.",
+	"subject failed to effectively utilize human assets in achievement of goal.",
+	"in attempting the feat, one proves their courage.",
+	"your adventure has unfortunately ended here.",
+	"this is not your fault, but ours for believing in you.",
+	"we are very sorry that you did not succeed and hope you will fare better next time. good luck.",
+	"you are out of range of the command module and presumed lost.",
+	"you've met with a terrible fate, haven't you?",
+	"if only we had planned things a little better...",
+	"perhaps someone else will find a use for the ruins of this place.",
+	"let's think about what went wrong in your master plan and try again.",
+	"this is not working. i don't think you're made for this business.",
+	"thus ends your strange adventure in infinite space.",
+	"i may be digitised, but i'm not stupid. what's your excuse?",
+	"darkness like sleep. your heart fails you. this is an end to all journeys.",
+	"please wait where you are, and a cortex reaver will be along shortly to escort you to the celebration.",
+	"i'm sorry, but it's the end of the road. you've dashed a lot of hopes, including mine.",
+	"you cannot give up just yet...",
+	"but it refused.",
+	"your scattered thoughts will soon join the others. in this endless void carved by despair.",
+];
+
+const choice = messages[Math.floor(messages.length * Math.random())];
+---
+
+<Layout title="error">
+	<h1>404, page not found.</h1>
+	<p>{choice}</p>
+	<p><a href="/">return home.</a></p>
+</Layout>
