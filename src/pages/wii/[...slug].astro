@@ -1,0 +1,36 @@
+---
+import { fetch } from "../../../astro.config.mjs";
+
+export const prerender = false;
+
+const triples = [38, 144, 208, 34694, 195, 204];
+const doubles = [34618, 34632, 187, 34619, 58];
+
+const url = new URL("https://retroachievements.org/API/API_GetGameList.php");
+
+url.searchParams.append("y", import.meta.env.RA_API_KEY);
+url.searchParams.append("i", "19");
+url.searchParams.append("f", "1");
+
+const response = await fetch(url.href, undefined, {
+	shouldCacheResponse: (response) => response.ok,
+});
+
+if (!response.ok) {
+	return new Response(null, { status: 500 });
+}
+
+const response_json = (await response.json()) as { ID: number }[];
+
+const game_ids = response_json.map((g) => g.ID);
+
+const singles = game_ids.filter(
+	(id) => !triples.includes(id) && !doubles.includes(id)
+);
+
+const list_string = `3x Bounties:${triples.join(",")}|2x Bounties:${doubles.join(",")}|Base Points:${singles.join(",")}`;
+
+return Astro.redirect(
+	`https://retroachievements.org/user/${Astro.params.slug}/game-checklist?list=${encodeURIComponent(list_string)}`
+);
+---
