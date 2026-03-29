@@ -20,12 +20,6 @@ if (!response.ok) {
 	return new Response(null, { status: 500 });
 }
 
-if (response.returnedFromCache) {
-	console.log("cache hit");
-} else {
-	console.log("cache miss");
-}
-
 const response_json = (await response.json()) as { ID: number }[];
 
 const game_ids = response_json.map((g) => g.ID);
