@@ -16,7 +16,7 @@ const { title, image, tags, url, icon, extra } = Astro.props;
 ---
 
 <div
-	class="w-full items-center gap-4 overflow-hidden rounded-lg bg-linear-to-b from-slate-300 text-mist-900 to-slate-400 shadow-lg transition-all hover:shadow-xl card"
+	class="card w-full items-center gap-4 overflow-hidden rounded-lg bg-linear-to-b from-slate-300 to-slate-400 text-mist-900 shadow-lg transition-all hover:shadow-xl"
 >
 	{
 		image && (
@@ -24,7 +24,7 @@ const { title, image, tags, url, icon, extra } = Astro.props;
 				<img
 					src={image}
 					alt={title}
-					class="-z-10 h-full w-full object-cover max-h-40"
+					class="-z-10 h-full max-h-40 w-full object-cover"
 				/>
 			</div>
 		)
@@ -54,7 +54,7 @@ const { title, image, tags, url, icon, extra } = Astro.props;
 								{title}
 								<Icon
 									name="lucide:external-link"
-									class="inline w-4"
+									class="ml-1 inline w-4"
 								/>
 							</a>
 						) : (
