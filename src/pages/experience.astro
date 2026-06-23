@@ -1,13 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 const experience = await getCollection("experience");
 const renderedExperience = await Promise.all(
 	experience.map(async (job) => ({
 		...job,
-		...(await job.render()),
+		...(await render(job)),
 	}))
 );
 renderedExperience.sort((a, b) => b.data.sortOrder - a.data.sortOrder);

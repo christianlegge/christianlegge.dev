@@ -1,13 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 const projects = await getCollection("projects");
 const renderedProjects = await Promise.all(
 	projects.map(async (project) => ({
 		...project,
-		...(await project.render()),
+		...(await render(project)),
 	}))
 );
 renderedProjects.sort((a, b) => a.data.sortOrder - b.data.sortOrder);

@@ -1,15 +1,14 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import "@fontsource-variable/newsreader";
+import { type CollectionEntry, render } from "astro:content";
 import Tag from "./Tag.astro";
 import { titleToSlug } from "../util/blogTitle";
 
 export interface Props {
-	post: CollectionEntry;
+	post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <article class="blog-post">
@@ -21,7 +20,7 @@ const { Content } = await post.render();
 		>
 	</h1>
 	<p class="text-sm opacity-75" id="post-date">
-		{new Date(post.slug).toUTCString().slice(0, 16)}
+		{new Date(post.id).toUTCString().slice(0, 16)}
 	</p>
 	<Content />
 	<ul class="mt-4 flex flex-wrap gap-1">
@@ -37,11 +36,11 @@ const { Content } = await post.render();
 </article>
 <style>
 	article {
-		font-family: "Newsreader", serif;
+		font-family: var(--font-newsreader), serif;
 	}
 </style>
 <script>
-	function containsImage(el) {
+	function containsImage(el: HTMLElement) {
 		return el.getElementsByTagName("img").length > 0;
 	}
 	const post = document.getElementsByClassName("blog-post");

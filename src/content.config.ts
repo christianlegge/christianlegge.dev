@@ -1,6 +1,9 @@
-import { z, defineCollection } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 
 const blogCollection = defineCollection({
+	loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
 	schema: z.object({
 		title: z.string(),
 		tags: z.optional(z.array(z.string())),
@@ -10,6 +13,7 @@ const blogCollection = defineCollection({
 });
 
 const projectsCollection = defineCollection({
+	loader: glob({ base: "./src/content/projects", pattern: "**/*.{md,mdx}" }),
 	schema: z.object({
 		title: z.string(),
 		tags: z.optional(z.array(z.string())),
@@ -21,6 +25,7 @@ const projectsCollection = defineCollection({
 });
 
 const experienceCollection = defineCollection({
+	loader: glob({ base: "./src/content/experience", pattern: "**/*.{md,mdx}" }),
 	schema: z.object({
 		title: z.string(),
 		tags: z.optional(z.array(z.string())),
