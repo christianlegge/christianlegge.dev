@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import icon from "astro-icon";
 import tailwindcss from "@tailwindcss/vite";
 
@@ -16,5 +16,21 @@ export default defineConfig({
 	adapter: node({
 		mode: "standalone",
 	}),
+	fonts: [
+		{
+			provider: fontProviders.fontsource(),
+			name: "Newsreader",
+			cssVariable: "--font-newsreader",
+		},
+		{
+			provider: fontProviders.google(),
+			name: "Cascadia Code",
+			cssVariable: "--font-cascadia-code",
+		},
+		{
+			provider: fontProviders.google(),
+			name: "Mukta",
+			cssVariable: "--font-default",
+		},
+	],
 });
-

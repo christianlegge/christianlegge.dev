@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { Font } from "astro:assets";
 
 export interface Props {
 	title?: string;
@@ -81,6 +82,10 @@ const finalTitle = title ? `${title} | christian legge` : "christian legge";
 			property="twitter:image"
 			content={image ?? "https://christianlegge.dev/images/me.jpg"}
 		/>
+
+		<Font cssVariable="--font-default" />
+		<Font cssVariable="--font-newsreader" />
+		<Font cssVariable="--font-cascadia-code" />
 
 		<title>{finalTitle}</title>
 	</head>

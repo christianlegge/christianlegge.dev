@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+	font-family: var(--font-default), sans-serif;
+}
+
 html {
 	@apply min-h-screen;
 }
@@ -12,6 +16,7 @@ strong {
 }
 code {
 	font-family:
+		var(--font-cascadia-code),
 		Menlo,
 		Monaco,
 		Lucida Console,

@@ -11,7 +11,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<article class="blog-post">
+<article class="blog-post md:text-lg">
 	<h1>
 		<a
 			href={`/blog/${titleToSlug(post.data.title)}`}
