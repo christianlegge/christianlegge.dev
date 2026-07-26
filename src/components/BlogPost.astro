@@ -64,5 +64,11 @@ const { Content } = await render(post);
 				largeNext = true;
 			}
 		}
+		const svg = document.createElement("img");
+		svg.src = "/images/cl_dark.svg";
+		svg.alt = "SVG CL logo";
+		svg.style = "height:1.8rem;display:inline;margin-left:0.5rem";
+		const lastP = textPs[textPs.length - 1];
+		lastP.append(svg);
 	}
 </script>
