@@ -8,31 +8,36 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [icon(), sitemap()],
-    site: "https://christianlegge.dev",
+	integrations: [
+		icon(),
+		sitemap({
+			filter: (page) => !/blog\/\d{4}-\d\d-\d\d/.test(page),
+		}),
+	],
+	site: "https://christianlegge.dev",
 
-    vite: {
-        plugins: [tailwindcss()],
-    },
+	vite: {
+		plugins: [tailwindcss()],
+	},
 
-    adapter: node({
-        mode: "standalone",
-    }),
-    fonts: [
-        {
-            provider: fontProviders.fontsource(),
-            name: "Newsreader",
-            cssVariable: "--font-newsreader",
-        },
-        {
-            provider: fontProviders.google(),
-            name: "Cascadia Code",
-            cssVariable: "--font-cascadia-code",
-        },
-        {
-            provider: fontProviders.google(),
-            name: "Mukta",
-            cssVariable: "--font-default",
-        },
-    ],
+	adapter: node({
+		mode: "standalone",
+	}),
+	fonts: [
+		{
+			provider: fontProviders.fontsource(),
+			name: "Newsreader",
+			cssVariable: "--font-newsreader",
+		},
+		{
+			provider: fontProviders.google(),
+			name: "Cascadia Code",
+			cssVariable: "--font-cascadia-code",
+		},
+		{
+			provider: fontProviders.google(),
+			name: "Mukta",
+			cssVariable: "--font-default",
+		},
+	],
 });

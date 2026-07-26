@@ -8,14 +8,19 @@ import { titleToSlug } from "../../util/blogTitle";
 export const prerender = true;
 export const getStaticPaths = (async () => {
 	const blogPosts = await getCollection("blog");
-	return blogPosts.map((post) => ({
-		params: { slug: titleToSlug(post.data.title) },
-	}));
+	return [
+		...blogPosts.map((post) => ({
+			params: { slug: titleToSlug(post.data.title) },
+		})),
+		...blogPosts.map((post) => ({
+			params: { slug: post.id },
+		})),
+	];
 }) satisfies GetStaticPaths;
 
 const blogPosts = await getCollection("blog");
 
-let post = blogPosts.find((page) => Astro.params.slug === page.slug);
+let post = blogPosts.find((page) => Astro.params.slug === page.id);
 
 if (post) {
 	return Astro.redirect(titleToSlug(post.data.title));
@@ -24,10 +29,6 @@ if (post) {
 post = blogPosts.find(
 	(page) => Astro.params.slug === titleToSlug(page.data.title)
 );
-
-if (!post) {
-	return Astro.rewrite("/404");
-}
 
 const firstPara = post.body.split("\n").find((el) => el.length > 80);
 ---
