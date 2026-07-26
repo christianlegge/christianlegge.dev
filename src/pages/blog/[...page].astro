@@ -1,18 +1,37 @@
 ---
+import type { GetStaticPaths, GetStaticPathsOptions } from "astro";
 import BlogPost from "../../components/BlogPost.astro";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import { getCollection } from "astro:content";
 import { titleToSlug } from "../../util/blogTitle";
 
-const posts = await getCollection("blog");
-posts.sort((a, b) => b.id.localeCompare(a.id));
+export const getStaticPaths = (async ({ paginate }: GetStaticPathsOptions) => {
+	const posts = await getCollection("blog");
+	posts.sort((a, b) => b.id.localeCompare(a.id));
+
+	return paginate(posts, {
+		pageSize: 5,
+	});
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
 ---
 
 <BlogLayout title="blog">
 	<h1>My blog</h1>
 	<div class="mt-4 space-y-8">
 		{
-			posts.map((post) => (
+			page.currentPage > 1 && (
+				<a
+					href={`/blog${page.currentPage === 2 ? "" : `/${page.currentPage - 1}`}`}
+					class="mb-4 block text-lg"
+				>
+					Newer posts
+				</a>
+			)
+		}
+		{
+			page.data.map((post) => (
 				<>
 					<div class="post-preview relative max-h-96 overflow-clip">
 						<BlogPost post={post} />
@@ -26,6 +45,13 @@ posts.sort((a, b) => b.id.localeCompare(a.id));
 					<hr />
 				</>
 			))
+		}
+		{
+			page.currentPage < page.lastPage && (
+				<a href={`/blog/${page.currentPage + 1}`} class="text-lg">
+					Older posts
+				</a>
+			)
 		}
 	</div>
 </BlogLayout>
