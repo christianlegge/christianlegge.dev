@@ -23,7 +23,7 @@ const { Content } = await render(post);
 		{new Date(post.id).toUTCString().slice(0, 16)}
 	</p>
 	<Content />
-	<ul class="mt-4 flex flex-wrap gap-1">
+	<ul class="mt-8 flex flex-wrap gap-1">
 		{
 			post.data.tags &&
 				post.data.tags.map((tag) => (
