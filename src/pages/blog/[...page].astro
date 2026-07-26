@@ -47,10 +47,14 @@ const { page } = Astro.props;
 			))
 		}
 		{
-			page.currentPage < page.lastPage && (
+			page.currentPage < page.lastPage ? (
 				<a href={`/blog/${page.currentPage + 1}`} class="text-lg">
 					Older posts
 				</a>
+			) : (
+				<span class="text-slate-400 italic">
+					You've reached the end.
+				</span>
 			)
 		}
 	</div>
