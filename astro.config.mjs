@@ -31,6 +31,11 @@ export default defineConfig({
 		},
 		{
 			provider: fontProviders.google(),
+			name: "PT Serif",
+			cssVariable: "--font-pt-serif",
+		},
+		{
+			provider: fontProviders.google(),
 			name: "Cascadia Code",
 			cssVariable: "--font-cascadia-code",
 		},
